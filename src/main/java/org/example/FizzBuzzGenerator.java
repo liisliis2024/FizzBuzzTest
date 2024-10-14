@@ -1,16 +1,25 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FizzBuzzGenerator {
     public static void main(String[] args) {
 
         int count = 15;
+        List<String> fizzBuzzLoop = getFizzBuzzLoop(count);
+        System.out.println(fizzBuzzLoop);
+    }
+
+
+    public static List<String> getFizzBuzzLoop(int count) {
+        List<String> result = new ArrayList<>();
 
         for (int i = 1; i < count + 1; i++) {
 
-            String line = fizzBuzzOf(i);
-            System.out.println(line);
-
+            result.add(fizzBuzzOf(i));
         }
+        return result;
     }
 
     public static String fizzBuzzOf(int i) {
